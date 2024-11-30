@@ -6,6 +6,8 @@ import App from "./routes/App.jsx";
 import Reports from "./routes/Reports.jsx";
 import Settings from "./routes/Settings.jsx";
 import Body from "./components/body.jsx";
+import LoginRedirectHandler from "./components/LoginRedirectHandler.jsx"; // Import the new LoginRedirectHandler component
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -14,6 +16,7 @@ const router = createBrowserRouter([
       { path: "/", element: <Body /> },
       { path: "/Reports", element: <Reports /> },
       { path: "/Settings", element: <Settings /> },
+      { path: "/login-redirect", element: <LoginRedirectHandler /> }, // Add a route for login redirect
     ],
   },
 ]);

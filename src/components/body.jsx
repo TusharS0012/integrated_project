@@ -3,13 +3,16 @@ function Body() {
   return (
     <div className="bg-white h-full w-full">
       <div className="">
+        <script
+          type="module"
+          src="https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"
+        ></script>
         <tableau-viz
           id="tableau-viz"
-          src="https://prod-apnortheast-a.online.tableau.com/t/22bcs098-7dbc0806ed/views/CORPORATE20FINANCE20-20Budget20Controlling/ExecutiveSummary"
-          width="1300"
+          src="https://prod-apnortheast-a.online.tableau.com/t/22bcs061-15223ca96d/views/ExecutiveDashboard/ExecutiveDashboard"
+          width="1650"
           height="840"
-          hide-tabs
-          toolbar="no-toolbar"
+          toolbar="bottom"
         ></tableau-viz>
       </div>
     </div>
