@@ -1,3 +1,4 @@
+import { User } from "lucide-react";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -6,7 +7,7 @@ const LoginRedirectHandler = () => {
 
   useEffect(() => {
     // Get the token and user details from the URL query parameters
-    console.log("LoginRedirectHandler started");
+
     const urlParams = new URLSearchParams(window.location.search);
     const token = urlParams.get("token");
     const email = urlParams.get("email");
@@ -19,12 +20,14 @@ const LoginRedirectHandler = () => {
       localStorage.setItem("email", email);
       localStorage.setItem("first_name", firstName);
       localStorage.setItem("last_name", lastName);
-
-      // Redirect to the desired page (e.g., dashboard)
-      navigate("/"); // You can change this to any page you want to navigate to
     } else {
-      alert("Missing token or user details in the URL.");
+      // Log which parameters are missing
+      if (!token) console.log("Missing token");
+      if (!email) console.log("Missing email");
+      if (!firstName) console.log("Missing first name");
+      if (!lastName) console.log("Missing last name");
     }
+    navigate("/");
   }, [navigate]);
 
   return (

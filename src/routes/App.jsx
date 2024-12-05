@@ -8,7 +8,7 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className="bg-white p-4 w-screen h-screen overflow-hidden">
+    <div className="bg-black p-4 w-screen h-screen overflow-hidden">
       <div className="flex flex-row gap-1 w-full h-full">
         <Sidebar />
         <div className="flex flex-col w-full">
