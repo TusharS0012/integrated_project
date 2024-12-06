@@ -28,10 +28,10 @@ function Sidebar() {
         <p>
           <div className="flex items-center justify-center gap-2">
             <div className="w-8 m-3 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center">
-              {user.firstName ? user.firstName[0].toUpperCase() : "?"}
+              {user.firstName ? user.firstName[0].toUpperCase() : "T"}
             </div>
           </div>
-          {user.firstName ? `${user.firstName.toUpperCase()}` : "no"}
+          {user.firstName ? `${user.firstName.toUpperCase()}` : "Tushar"}
         </p>
       </div>
       <div className="flex flex-col gap-16 text-1xl h-full m-10 justify-start">
