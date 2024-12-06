@@ -19,22 +19,26 @@ function Sidebar() {
     localStorage.removeItem("last_name");
 
     // Redirect the user to the login page after logout
-    navigate("/login");
+    window.location.href = "http://127.0.0.1:8000/";
   };
 
   return (
-    <div className="sidebar rounded-[2rem] flex flex-col w-64">
-      <div className="user-info text-orange-500 text-2xl text-center m-5 rounded-lg bg-white p-5 w-100">
+    <div className="sidebar rounded-[2rem] flex flex-col">
+      <div className="user-info text-orange-500 text-2xl text-center m-2 rounded-lg bg-white p-10 w-100">
         <p>
-          {user.firstName ? `${user.firstName} ${user.lastName}` : "Tushar"}
+          <div className="flex items-center justify-center gap-2">
+            <div className="w-8 m-3 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center">
+              {user.firstName ? user.firstName[0].toUpperCase() : "?"}
+            </div>
+          </div>
+          {user.firstName ? `${user.firstName.toUpperCase()}` : "no"}
         </p>
-        <p>{user.email ? user.email : ""}</p>
       </div>
-      <div className="flex flex-col gap-16 h-full m-10 justify-start">
+      <div className="flex flex-col gap-16 text-1xl h-full m-10 justify-start">
         <Link
           to="/"
-          className={`flex items-center gap-2 text-white hover:text-yellow-500 ${
-            location.pathname === "/" ? "text-yellow-500" : ""
+          className={`flex items-center gap-2 text-black  hover:text-yellow-500  ${
+            location.pathname === "/" ? "text-black" : ""
           }`}
         >
           <svg
@@ -57,7 +61,7 @@ function Sidebar() {
 
         <Link
           to="/Reports"
-          className={`flex items-center gap-2 text-white hover:text-yellow-500 ${
+          className={`flex items-center gap-2 text-black hover:text-yellow-500 ${
             location.pathname === "/Reports" ? "text-yellow-500" : ""
           }`}
         >
@@ -84,7 +88,7 @@ function Sidebar() {
 
         <Link
           to="/Settings"
-          className={`flex items-center gap-2 text-white hover:text-yellow-500 ${
+          className={`flex items-center gap-2 text-black hover:text-yellow-500 ${
             location.pathname === "/Settings" ? "text-yellow-500" : ""
           }`}
         >
@@ -108,7 +112,7 @@ function Sidebar() {
         {/* Logout Button */}
         <button
           onClick={handleLogout}
-          className="flex items-center gap-2 text-white hover:text-yellow-500 mt-4"
+          className="flex items-center gap-2 text-black hover:text-yellow-500 mt-4"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

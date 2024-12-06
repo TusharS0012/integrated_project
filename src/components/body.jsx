@@ -1,7 +1,7 @@
 import React from "react";
 function Body() {
   return (
-    <div className="bg-white h-full w-full">
+    <div className="bg-white body rounded-b-[4rem]">
       <div className="">
         <script
           type="module"
@@ -16,6 +16,7 @@ function Body() {
         ></tableau-viz>
       </div>
     </div>
+    
   );
 }
 
