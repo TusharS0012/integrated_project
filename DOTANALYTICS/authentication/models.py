@@ -1,5 +1,8 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
+from django.conf import settings
+from django.db import models
+from datetime import timedelta, datetime
 
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
@@ -40,3 +43,19 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+    
+
+
+from django.conf import settings
+from django.db import models
+from datetime import timedelta, datetime
+
+class PasswordResetOTP(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    otp = models.CharField(max_length=6)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def is_otp_valid(self):
+        """Check if the OTP is still valid (e.g., within 10 minutes)."""
+        return datetime.now() - self.created_at < timedelta(minutes=10)
+

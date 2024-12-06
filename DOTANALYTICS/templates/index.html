@@ -1,4 +1,7 @@
+ 
+
 {% load static%}
+
 
 
 <!DOCTYPE html>
@@ -16,34 +19,133 @@
     <link rel="icon" type="image/png" href="{% static 'donut-chart.png' %}">
 
 </head>
-<body>
-   
-        <!--header-->
-        <header class="header">
-            <nav class="nav">
-                <a href="#" class="nav_logo"><img src="{% static 'donut-chart.png' %}"></a>
-                <ul class="nav_items">
-                    <li class="nav_item">
-                        <a href="#" class="nav_link">Home</a>
-                    </li>
-                    <li class="nav_item">
-                        <a href="#" class="nav_link">Products</a>
-                    </li>
-                    <li class="nav_item">
-                        <a href="#" class="nav_link">Consulting</a>
-                    </li>
-                    <li class="nav_item">
-                        <a href="#" class="nav_link">Services</a>
-                    </li>
-                    <li class="nav_item">
-                        <a href="#" class="nav_link">Contact</a>
-                    </li>
-                </ul>
 
-                <button class="button" id="form-open">Login</button>
-            </nav>
-        </header>
-        <main>
+<body>
+
+     <!--header-->
+     <header class="header">
+        <nav class="nav">
+            <a href="#" class="nav_logo"><img src="{% static 'donut-chart.png' %}"></a>
+            <ul class="nav_items">
+                <li class="nav_item">
+                    <a href="#" class="nav_link">Home</a>
+                </li>
+                <li class="nav_item">
+                    <a href="#" class="nav_link">Products</a>
+                </li>
+                <li class="nav_item">
+                    <a href="#" class="nav_link">Consulting</a>
+                </li>
+                <li class="nav_item">
+                    <a href="#" class="nav_link">Services</a>
+                </li>
+                <li class="nav_item">
+                    <a href="#" class="nav_link">Contact</a>
+                </li>
+            </ul>
+
+            <button class="button" id="form-open">Login</button>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="form_container">
+            <i class="uil uil-times form_close"></i>
+           <!--login from-->
+           <div class="form login_form">
+            <form action="{% url 'login' %}" method="post"> {% csrf_token %}
+                <h2>Login</h2>
+                <div class="input_box">
+                    <input type="email" name="email" placeholder="Enter your email" required/>
+                    <i class="uil uil-envelope-alt email"></i>
+                </div>
+                <div class="input_box">
+                    <input type="password" name="password"placeholder="Enter your password" required/>
+                    <i class="uil uil-lock password"></i>
+                    <i class="uil uil-eye-slash pw_hide"></i>
+                </div>
+                <div class="option_field">
+                    <span class="checkbox">
+                        <input type="checkbox" id="check">
+                        <label for="check">Remember me</label>
+                    </span>
+                    <a     href="#" class="forgot_pw">Forgot password?</a>
+                </div>
+                <button class="button">Login Now</button>
+
+                <div class="login_signup"> Don't have an account? <a href="#" id="signup">Signup</a>
+                </div>
+            </form>
+        </div>
+
+
+
+            <!--signup-->
+            <div class="form signup_form">
+                <form action="{% url 'signup' %}" method="post">{% csrf_token %}
+                    
+                    <h2>Signup</h2>
+                     
+                    <div class="input_box">
+                        <input type="email"  name="email" placeholder="Enter your email" required/>
+                        <i class="uil uil-envelope-alt email"></i>
+                    </div>
+                    <div class="input_box">
+                        <input type="password" name="password" placeholder="Create your password" required/>
+                        <i class="uil uil-lock password"></i>
+                        <i class="uil uil-eye-slash pw_hide"></i>
+                    </div>
+                    <div class="input_box">
+                        <input type="password" name="password2" placeholder="Confirm your password" required/>
+                        <i class="uil uil-lock password"></i>
+                        <i class="uil uil-eye-slash pw_hide"></i>
+                    </div>
+                   
+
+                    <button class="button">Signup Now</button>
+
+                    <div class="login_signup"> Already have an account? <a href="#" id="login">Login</a>
+                    </div>
+                </form>
+            </div>
+            
+<div class="form email_form">
+    <form action= "{% url 'request_otp' %}"method="POST">{% csrf_token %}
+        <h2>Forgot Password</h2>
+        <div class="input_box">
+            <input type="email" name='email' placeholder="Enter your email" required />
+            <i class="uil uil-envelope-alt email"></i>
+        </div>
+        <button id="send_otp" class="button">Send OTP</button>
+    </form>
+</div>
+
+
+<div class="form set_password_form">
+    <form action="{% url 'validate_and_reset' %}" method="POST">{% csrf_token %}
+        <h2>Set New Password</h2>
+        <div class="input_box">
+            <input type="email" placeholder="Enter your email" required />
+            <i class="uil uil-envelope-alt email"></i>
+        </div>
+        <div class="input_box">
+            <input type="text" placeholder="Enter OTP" required />
+            <i class="uil uil-key-skeleton-alt text"></i>
+        </div>
+        <div class="input_box">
+            <input type="password" placeholder="Set your new password" required />
+            <i class="uil uil-lock password"></i>
+            <i class="uil uil-eye-slash pw_hide"></i>
+        </div>
+        <div class="input_box">
+            <input type="password" placeholder="Confirm your new password" required />
+            <i class="uil uil-lock password"></i>
+            <i class="uil uil-eye-slash pw_hide"></i>
+        </div>
+        <button class="button">Reset Password</button> 
+    </form>
+</div>
+    </section>
+    <main>
         <div class="carousel">
             <div class="list">
                <div class="item" style="background-image: url('{% static 'photo2-min.jpg' %}');">
@@ -118,133 +220,181 @@
             <!--next prev button-->
             <div class="arrows">
                 <button class="prev"><</button>
-                <button class="next">></button>
+                        <button class="next">></button>
             </div>
-            <section class="home">
-                <div class="form_container">
-                    <i class="uil uil-times form_close"></i>
-                    <!--login from-->
-                    <div class="form login_form">
-                        <form action="{% url 'login' %}" method="post"> {% csrf_token %}
-                            <h2>Login</h2>
-                            <div class="input_box">
-                                <input type="email" name="email" placeholder="Enter your email" required/>
-                                <i class="uil uil-envelope-alt email"></i>
-                            </div>
-                            <div class="input_box">
-                                <input type="password" name="password"placeholder="Enter your password" required/>
-                                <i class="uil uil-lock password"></i>
-                                <i class="uil uil-eye-slash pw_hide"></i>
-                            </div>
-                            <div class="option_field">
-                                <span class="checkbox">
-                                    <input type="checkbox" id="check">
-                                    <label for="check">Remember me</label>
-                                </span>
-                                <a     href="#" class="forgot_pw">Forgot password?</a>
-                            </div>
-                            <button class="button">Login Now</button>
-        
-                            <div class="login_signup"> Don't have an account? <a href="#" id="signup">Signup</a>
-                            </div>
-                        </form>
+        </div>
+        <div class="layout">
+            <div class="cards">
+                <div class="card card1">
+                    <div class="bucket">
+                        <img src="{% static 'sunset.jpeg' %}" alt="sunset">
                     </div>
-        
-        
-                    <!--signup-->
-                    <div class="form signup_form">
-                        <form action="{% url 'signup' %}" method="post">{% csrf_token %}
-                            <h2>Signup</h2>
-                            <div class="input_box">
-                                <input type="email"  name="email" placeholder="Enter your email" required/>
-                                <i class="uil uil-envelope-alt email"></i>
-                            </div>
-                            <div class="input_box">
-                                <input type="password" name="password" placeholder="Create your password" required/>
-                                <i class="uil uil-lock password"></i>
-                                <i class="uil uil-eye-slash pw_hide"></i>
-                            </div>
-                            <div class="input_box">
-                                <input type="password" name="password2" placeholder="Confirm your password" required/>
-                                <i class="uil uil-lock password"></i>
-                                <i class="uil uil-eye-slash pw_hide"></i>
-                            </div>
-                           
-                            <button class="button">Signup Now</button>
-        
-                            <div class="login_signup"> Already have an account? <a href="#" id="login">Login</a>
-                            </div>
-                        </form>
+                    <div class="details">
+                        <h3>Sunset</h3>
+                        <p>Lorem ipsum dolor
+                            sit amet consectetur
+                            adipisicing elit
+                            Officiis culpa similique
+                            consequuntur</p>
                     </div>
                 </div>
-            </section>
-        </main>
+                <div class="card card2">
+                    <div class="bucket">
+                        <img src="{% static 'montreal.jpeg' %}" alt="canada">
+                    </div>
+                    <div class="details">
+                        <h3>Smvdu</h3>
+                        <p>Lorem ipsum dolor
+                            sit amet consectetur
+                            adipisicing elit
+                            Officiis culpa similique
+                            consequuntur</p>
+                    </div>
+                </div>
+                <div class="card card3">
+                    <div class="bucket">
+                        <img src="{% static 'mumbai.jpeg' %}" alt="mumbai">
+                    </div>
+                    <div class="details">
+                        <h3>Mumbai</h3>
+                        <p>Lorem ipsum dolor
+                            sit amet consectetur
+                            adipisicing elit
+                            Officiis culpa similique
+                            consequuntur</p>
+                    </div>
+                </div>
+                <div class="card card4">
+                    <div class="bucket">
+                        <img src="{% static 'airport.jpeg' %}" alt="airport">
+                    </div>
+                    <div class="details">
+                        <h3>Sunset</h3>
+                        <p>Lorem ipsum dolor
+                            sit amet consectetur
+                            adipisicing elit
+                            Officiis culpa similique
+                            consequuntur</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- last section before footer -->
+         <div class="capsule">
+            <div class="text-capsule">
+                <h1>Hello Beautiful World! What's Up</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Officiis culpa
+                    similique consequuntur</p>
+                    <div class="buttons">
+                        <a href="#" class="btn">Patel^Thakur</a>
+                    </div>
+            </div>
+            <div class="img-capsule">
+                <img src="{% static 'hostel.jpeg' %}"alt="imgg">
+            </div>
+         </div>
+    </main>
 
-            <footer>
-                <footer class="footer">
-                    <div class="container">
-                        <div class="row">
-                            <div class="footer-col">
-                                <h4>Support for</h4>
-                                <ul>
-                                        <li><a href="#">Carrers</a></li>
-                                        <li><a href="#">Developers</a></li>
-                                        <li><a href="#">Partners</a></li>
-                                        <li><a href="#">Case studies</a></li>
-                                        <li><a href="#">Researchers</a></li>
-                                        <li><a href="#">Educators and students</a></li>
-                                </ul>
-                            </div>
-                            <div class="footer-col">
-                                    <h4>Why Dotanalytics</h4>
-                                    <ul>
-                                        <li><a href="#">Analyst reports</a></li>
-                                        <li><a href="#">Best Business Intelligence</a></li>
-                                        <li><a href="#">Cloud Economics</a></li>
-                                        <li><a href="#">Community Benefits</a></li>
-                                        <li><a href="#">Culture and Inclusion</a></li>
-                                        <li><a href="#">Security Policies</a></li>
-                                    </ul>
-                            </div>
-                            <div class="footer-col">
-                                    <h4>Learn</h4>
-                                    <ul>
-                                        <li><a href="#">Artficial Intelligence</a></li>
-                                        <li><a href="#">Machine Learning</a></li>
-                                        <li><a href="#">Cyber Security</a></li>
-                                        <li><a href="#">Docker</a></li>
-                                        <li><a href="#">Python</a></li>
-                                        <li><a href="#">Saas</a></li>
-                                    </ul>
-                            </div>
-                            <div class="footer-col">
-                                    <h4>News and Events</h4>
-                                    <ul>
-                                        <li><a href="#">News</a></li>
-                                        <li><a href="#">CloudWorld</a></li>
-                                        <li><a href="#">CloudWorld tour</a></li>
-                                        <li><a href="#">Summit</a></li>
-                                        <li><a href="#">DevLive</a></li>
-                                        <li><a href="#">Events</a></li>
-                                    </ul>
-                            </div>
-                            <div class="footer-col">
-                                    <h4>Contact us</h4>
-                                    <ul>
-                                        <li><a href="#">Sales: +1 673219821</a></li>
-                                        <li><a href="#">How can we help?</a></li>
-                                        <li><a href="#">Subscribe to emails</a></li>
-                                        <li><a href="#">Helpline</a></li>
-                                    </ul>
-                            </div>
-                        </div>
-                </footer>
-            </footer>    
-         <!--home-->
-   
-        
-        
+    <footer>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>Support for</h4>
+                        <ul>
+                            <li><a href="#">Carrers</a></li>
+                            <li><a href="#">Developers</a></li>
+                            <li><a href="#">Partners</a></li>
+                            <li><a href="#">Case studies</a></li>
+                            <li><a href="#">Researchers</a></li>
+                            <li><a href="#">Educators and students</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Why Dotanalytics</h4>
+                        <ul>
+                            <li><a href="#">Analyst reports</a></li>
+                            <li><a href="#">Best Business Intelligence</a></li>
+                            <li><a href="#">Cloud Economics</a></li>
+                            <li><a href="#">Community Benefits</a></li>
+                            <li><a href="#">Culture and Inclusion</a></li>
+                            <li><a href="#">Security Policies</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Learn</h4>
+                        <ul>
+                            <li><a href=" {% url 'MachineLearning' %}">Machine Learning</a></li>
+                            <li><a href=" {% url 'ArtficialIntelligence' %}">Artficial Intelligence</a></li>
+                            <li><a href=" {% url 'cyber' %}">Cyber Security</a></li>
+                            <li><a href=" {% url 'docker' %}">Docker</a></li>
+                            <li><a href=" {% url 'python' %}">Python</a></li>
+                            <li><a href=" {% url 'saas' %}">Saas</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>News and Events</h4>
+                        <ul>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">CloudWorld</a></li>
+                            <li><a href="#">CloudWorld tour</a></li>
+                            <li><a href="#">Summit</a></li>
+                            <li><a href="#">DevLive</a></li>
+                            <li><a href="#">Events</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact us</h4>
+                        <ul>
+                            <li><a href="#">Sales: +1 673219821</a></li>
+                            <li><a href="#">How can we help?</a></li>
+                            <li><a href="#">Subscribe to emails</a></li>
+                            <li><a href="#">Helpline</a></li>
+                        </ul>
+                    </div>
+                    <div class="iconn">
+                        <ul class="footer_items">
+                            <a href="#" target="_blank">
+                                DotAnalytics <i class="fa-regular fa-copyright"></i>2024
+                            </a>
+                            <a href="#" target="_blank">
+                                About
+                            </a>
+                            <a href="#" target="_blank">
+                                User Agreement
+                            </a>
+                            <a href="#" target="_blank">
+                                Privacy
+                            </a>
+                            <a href="#" target="_blank">
+                                Cookie Preferences
+                            </a>
+                            <a href="#" target="_blank">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="#" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#" target="_blank">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                            <a href="#" target="_blank">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a href="#" target="_blank">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                    </div>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </footer>
+    </footer>
+    <!--home-->
     <script src="{% static 'script.js' %}"></script>
+
 </body>
 
 </html>

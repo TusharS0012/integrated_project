@@ -1,0 +1,150 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {%static  'python.css'%}">
+    <title>Python | DotAnalytics</title>
+    <link rel="icon" type="image/png" href=" {%static 'donut-chart.png'%}">
+</head>
+<body>
+    <main>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sbcontent">
+            <h3>Topics</h3>
+            <ul>
+                <li><a href="#topic1">Overview</a></li>
+                <li><a href="#topic2">Key Features</a></li>
+                <li><a href="#topic3">Python Applications</a></li>
+                <li><a href="#topic4">Advantanges</a></li>
+                <li><a href="#topic5">Limitations</a></li>
+                <li><a href="#topic6">Future of Python</a></li>
+            </ul>
+        </div>
+        </div>
+        <div class="content">
+            <section id="topic1">
+                <h1>Overview</h1>
+                <p>Python is a high-level, interpreted programming language known for its simplicity and readability. Created by Guido van Rossum in 1991, Python emphasizes code readability through its use of significant indentation and a clean syntax, making it an excellent choice for beginners and experienced developers alike. Python supports multiple programming paradigms, including procedural, object-oriented, and functional programming. Its comprehensive standard library and active community provide tools and modules for a wide range of applications, from web development to data analysis and artificial intelligence. Python's versatility and ease of use have contributed to its widespread adoption in industries such as finance, healthcare, and technology.</p>
+            </section>
+            <section id="topic2">
+                <h2>Key Features of Python</h2>
+                <p>Python offers several features that make it unique and powerful. It is platform-independent, meaning programs written in Python can run on various operating systems like Windows, macOS, and Linux without modification. Python's dynamic typing and automatic memory management simplify development by removing the need for explicit type declarations or memory allocation. The language is extensible, allowing integration with C, C++, and other languages, which is beneficial for performance-critical applications. Additionally, Python's interactive mode and robust debugging tools help developers test and refine code efficiently. Its libraries and frameworks, such as NumPy for scientific computing and Django for web development, further expand its capabilities.</p>
+            </section>
+            <section id="topic3">
+                <h2>Python Applications</h2>
+                <p>Python’s flexibility makes it suitable for a variety of applications. In web development, frameworks like Flask and Django simplify creating scalable and secure websites. In data science, Python dominates with libraries such as pandas for data manipulation and Matplotlib for visualization. It is also heavily used in machine learning and AI, leveraging libraries like TensorFlow and scikit-learn. Python supports scripting for automating repetitive tasks and is popular in system administration. Game development, scientific research, financial modeling, and IoT applications also benefit from Python's wide range of tools and modules. Its use in education and research underscores its role in fostering innovation.</p>
+                </section>
+            <section id="topic4">
+                <h2>Advantages</h2>
+                <p>Python’s user-friendly nature is one of its most significant advantages. Its readable syntax reduces development time and effort, making it an ideal choice for rapid prototyping and iterative development. Python's extensive library ecosystem minimizes the need to write code from scratch, saving time on common tasks. Its open-source nature and a large, active community ensure continuous updates and support. Python integrates seamlessly with other languages and technologies, allowing developers to leverage its strengths in diverse projects. The language’s adaptability ensures that it remains relevant for various applications, including emerging fields like artificial intelligence and blockchain.</p>
+            </section>
+            <section id="topic5">
+                <h2>Limitations</h2>
+                <p>Despite its advantages, Python has some limitations. Its interpreted nature can make it slower compared to compiled languages like C++ or Java, which can be a drawback for performance-intensive applications. Python’s dynamic typing, while simplifying development, can lead to runtime errors that are harder to debug. Additionally, its high memory consumption makes it less suitable for resource-constrained environments. For mobile application development, Python lags behind other languages like Kotlin or Swift due to limited native support. These drawbacks, however, are often outweighed by its flexibility and ease of use in most practical scenarios.</p>
+            </section>
+            <section id="topic6">
+                <h2>Future of Python</h2>
+                <p>Python’s future looks promising as it continues to evolve and adapt to modern technological needs. With the growing demand for machine learning, data science, and AI, Python’s popularity in these fields is expected to increase. The language is also expanding its presence in areas like quantum computing and cybersecurity. Community-driven enhancements, such as improvements in performance and new libraries, ensure its relevance. The development of Python’s ecosystem, including faster interpreters like PyPy and specialized tools like Dask for parallel computing, highlights its adaptability. As industries increasingly rely on Python for innovation, its role as a leading programming language remains secure.</p>
+            </section>
+    </div> 
+</main>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Support for</h4>
+                    <ul>
+                        <li><a href="#">Carrers</a></li>
+                        <li><a href="#">Developers</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Case studies</a></li>
+                        <li><a href="#">Researchers</a></li>
+                        <li><a href="#">Educators and students</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Why Dotanalytics</h4>
+                    <ul>
+                        <li><a href="#">Analyst reports</a></li>
+                        <li><a href="#">Best Business Intelligence</a></li>
+                        <li><a href="#">Cloud Economics</a></li>
+                        <li><a href="#">Community Benefits</a></li>
+                        <li><a href="#">Culture and Inclusion</a></li>
+                        <li><a href="#">Security Policies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Learn</h4>
+                    <ul>
+                        <li><a href=" {% url 'MachineLearning' %}">Machine Learning</a></li>
+                            <li><a href=" {% url 'ArtficialIntelligence' %}">Artficial Intelligence</a></li>
+                            <li><a href=" {% url 'cyber' %}">Cyber Security</a></li>
+                            <li><a href=" {% url 'docker' %}">Docker</a></li>
+                            <li><a href=" {% url 'python' %}">Python</a></li>
+                            <li><a href=" {% url 'saas' %}">Saas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>News and Events</h4>
+                    <ul>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">CloudWorld</a></li>
+                        <li><a href="#">CloudWorld tour</a></li>
+                        <li><a href="#">Summit</a></li>
+                        <li><a href="#">DevLive</a></li>
+                        <li><a href="#">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact us</h4>
+                    <ul>
+                        <li><a href="#">Sales: +1 673219821</a></li>
+                        <li><a href="#">How can we help?</a></li>
+                        <li><a href="#">Subscribe to emails</a></li>
+                        <li><a href="#">Helpline</a></li>
+                    </ul>
+                </div>
+                <div class="iconn">
+                    <ul class="footer_items">
+                        <a href="#" target="_blank">
+                            DotAnalytics <i class="fa-regular fa-copyright"></i>2024
+                        </a>
+                        <a href="#" target="_blank">
+                            About
+                        </a>
+                        <a href="#" target="_blank">
+                            User Agreement
+                        </a>
+                        <a href="#" target="_blank">
+                            Privacy
+                        </a>
+                        <a href="#" target="_blank">
+                            Cookie Preferences
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                </div>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </footer>
+</footer>
+</body>
+</html>

@@ -24,4 +24,13 @@ urlpatterns = [
     path('signup/',views. RegisterView.as_view(), name='signup'),
     path('login/',views. LoginView.as_view(), name='login'),
     path('',views.home, name='home '),
+    path('saas/', views.saas_view, name='saas'),
+    path('MachineLearning/', views.MachineLearning_view, name='MachineLearning'),
+    path('ArtficialIntelligence/', views.ArtficialIntelligence_view, name='ArtficialIntelligence'),
+    path('python/', views.python_view, name='python'),
+    path('cyber/', views.cyber_view, name='cyber'),
+    path('docker/', views.docker_view, name='docker'),
+    path("request_otp/", views.RequestOTPView.as_view(), name="request_otp"),
+    path("validate_and_reset/", views.ValidateOTPAndResetPasswordView.as_view(), name="validate_and_reset"),
+
 ]

@@ -1,0 +1,155 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {%static 'cyber.css'%}">
+    <title>Cyber Security | DotAnalytics</title>
+    <link rel="icon" type="image/png" href=" {%static 'donut-chart.png'%}">
+</head>
+<body>
+    <main>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sbcontent">
+            <h3>Topics</h3>
+            <ul>
+                <li><a href="#topic1">Introduction</a></li>
+                <li><a href="#topic2">Types of Cyber Threats</a></li>
+                <li><a href="#topic3">Importance of Cyber Security</a></li>
+                <li><a href="#topic4">Measures and Best Practices</a></li>
+                <li><a href="#topic5">Cloud Integration</a></li>
+                <li><a href="#topic6">Emerging Trends</a></li>
+                <li><a href="#topic7">Careers in Cyber Security</a></li>
+            </ul>
+        </div>
+        </div>
+        <div class="content">
+            <section id="topic1">
+                <h1>Introduction</h1>
+                <p>Introduction to Cyber Security: Cyber security is the practice of defending computers, servers, mobile devices, electronic systems, networks, and data from malicious attacks. It has become increasingly important in an interconnected world where digital platforms and devices dominate our daily lives. Cyber security encompasses everything from protecting personal information stored on smartphones to safeguarding sensitive data of large organizations. This multi-faceted field involves various disciplines, including network security, information security, and operational security. At its core, cyber security aims to ensure the integrity, confidentiality, and availability of information, thereby protecting against threats like hacking, data breaches, and cyberterrorism.</p>
+            </section>
+            <section id="topic2">
+                <h2>Types of Cyber Threats</h2>
+                <p>Various types of cyber threats pose significant risks to personal and organizational data. These threats include malware, such as viruses, worms, and ransomware, which can cripple systems and demand ransom payments to restore access. Phishing attacks deceive individuals into revealing sensitive information by posing as legitimate entities. Man-in-the-middle attacks intercept and alter communication between two parties without their knowledge. Denial-of-service attacks overwhelm systems, making them unavailable to users. Advanced persistent threats involve prolonged and targeted attacks aimed at stealing sensitive information. Understanding these threats helps individuals and organizations develop robust defense mechanisms and stay vigilant against potential breaches.</p> 
+            </section>
+            <section id="topic3">
+                <h2>Importance of Cyber Security</h2>
+                <p>Cyber security is critical for protecting sensitive data, maintaining privacy, and ensuring the smooth functioning of information systems. The consequences of inadequate cyber security measures can be severe, leading to financial losses, reputational damage, and legal liabilities. For businesses, a cyber attack can result in the loss of intellectual property, competitive advantage, and customer trust. Governments and institutions are increasingly recognizing the importance of stringent cyber security protocols to protect national security and public infrastructure. Moreover, cyber security is essential for safeguarding personal information and preventing identity theft, ensuring that individuals can use digital services with confidence.</p>
+            </section>
+            <section id="topic4">
+                <h2>Measures and Best Practices</h2>
+                <p>Effective cyber security requires a multi-layered approach involving both technology and human practices. Key measures include using strong, unique passwords, regularly updating software, employing firewalls and anti-virus programs, and encrypting sensitive data. Best practices also emphasize the importance of regular security training for employees, as human error often plays a significant role in security breaches. Implementing two-factor authentication adds an extra layer of security by requiring a second form of verification. Establishing incident response plans enables organizations to quickly address breaches and minimize damage. A comprehensive approach to cyber security involves continuous monitoring, risk assessment, and adherence to industry standards and regulations.</p>
+            </section>
+            <section id="topic5">
+                <h2>Cloud Integration</h2>
+                <p>As more organizations migrate to cloud services, ensuring cyber security in these environments has become a priority. Cloud security involves securing data stored and processed on remote servers, which requires collaboration between the cloud service provider and the client. Critical aspects include data encryption, access management, and regular security audits. Cloud service providers often offer built-in security features, such as encryption, intrusion detection systems, and multi-factor authentication. However, organizations must still implement their own security measures, such as ensuring proper configuration of cloud services and monitoring for suspicious activity. The shared responsibility model highlights the need for both providers and clients to take an active role in securing cloud environments.</p>
+            </section>
+            <section id="topic6">
+                <h2>Emerging Trends</h2>
+                <p>The field of cyber security is constantly evolving to keep pace with new technologies and emerging threats. Current trends include the use of artificial intelligence and machine learning to detect and respond to threats more efficiently. These technologies can analyze vast amounts of data to identify patterns and anomalies indicative of cyber attacks. The adoption of zero-trust security models, which assume that all network traffic is potentially malicious, is gaining traction. Securing Internet of Things (IoT) devices is increasingly important as these devices proliferate in homes and businesses. Regulatory requirements, such as the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA), are becoming stricter, compelling organizations to enhance their cyber security frameworks and protect personal data.</p>
+            </section>
+            <section id="topic7">
+                <h2>Careers in Cyber Security</h2>
+                <p>The growing emphasis on cyber security has led to a surge in demand for skilled professionals in this field. Careers in cyber security range from roles like security analysts, ethical hackers, and security engineers to positions in cyber security policy and education. Security analysts monitor and protect networks from threats, while ethical hackers, or penetration testers, identify vulnerabilities by attempting to breach systems. Security engineers design and implement secure systems and networks. A career in cyber security offers the opportunity to contribute to protecting critical information and infrastructure while staying at the forefront of technological advancements. Continuous learning and certification in various aspects of cyber security, such as Certified Information Systems Security Professional (CISSP) and Certified Ethical Hacker (CEH), are essential for career growth in this dynamic field.</p>
+            </section>
+    </div> 
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Support for</h4>
+                <ul>
+                    <li><a href="#">Carrers</a></li>
+                    <li><a href="#">Developers</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Case studies</a></li>
+                    <li><a href="#">Researchers</a></li>
+                    <li><a href="#">Educators and students</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Why Dotanalytics</h4>
+                <ul>
+                    <li><a href="#">Analyst reports</a></li>
+                    <li><a href="#">Best Business Intelligence</a></li>
+                    <li><a href="#">Cloud Economics</a></li>
+                    <li><a href="#">Community Benefits</a></li>
+                    <li><a href="#">Culture and Inclusion</a></li>
+                    <li><a href="#">Security Policies</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Learn</h4>
+                <ul>
+                    <li><a href=" {% url 'MachineLearning' %}">Machine Learning</a></li>
+                    <li><a href=" {% url 'ArtficialIntelligence' %}">Artficial Intelligence</a></li>
+                    <li><a href=" {% url 'cyber' %}">Cyber Security</a></li>
+                    <li><a href=" {% url 'docker' %}">Docker</a></li>
+                    <li><a href=" {% url 'python' %}">Python</a></li>
+                    <li><a href=" {% url 'saas' %}">Saas</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>News and Events</h4>
+                <ul>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">CloudWorld</a></li>
+                    <li><a href="#">CloudWorld tour</a></li>
+                    <li><a href="#">Summit</a></li>
+                    <li><a href="#">DevLive</a></li>
+                    <li><a href="#">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact us</h4>
+                <ul>
+                    <li><a href="#">Sales: +1 673219821</a></li>
+                    <li><a href="#">How can we help?</a></li>
+                    <li><a href="#">Subscribe to emails</a></li>
+                    <li><a href="#">Helpline</a></li>
+                </ul>
+            </div>
+            <div class="iconn">
+                <ul class="footer_items">
+                    <a href="#" target="_blank">
+                        DotAnalytics <i class="fa-regular fa-copyright"></i>2024
+                    </a>
+                    <a href="#" target="_blank">
+                        About
+                    </a>
+                    <a href="#" target="_blank">
+                        User Agreement
+                    </a>
+                    <a href="#" target="_blank">
+                        Privacy
+                    </a>
+                    <a href="#" target="_blank">
+                        Cookie Preferences
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+            </div>
+            </ul>
+        </div>
+    </div>
+    </div>
+</footer>
+</footer>
+</body>
+</html>
